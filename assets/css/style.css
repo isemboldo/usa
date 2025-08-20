@@ -1,0 +1,715 @@
+/* --- Guida di Stile: "La Nostra Avventura Americana" --- */
+
+/* 1. Tipografia e Colori di Base */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f4;
+    color: #292524;
+    line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1c1917;
+    font-weight: 700;
+}
+
+a {
+    color: #7c3aed;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #9d5dff;
+}
+
+/* 2. Layout Principale */
+.main-container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+@media (min-width: 640px) {
+    .main-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+/* 3. Stili per Testi su Immagini (Globale) */
+.image-overlay-container {
+    position: relative;
+}
+
+.image-overlay-gradient, .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 30%, transparent 70%);
+}
+
+.hero-overlay {
+     background-color: rgba(0, 0, 0, 0.6);
+}
+
+.image-overlay-content {
+    position: relative;
+    color: #f5f5f4;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.image-overlay-content h1, 
+.image-overlay-content h3, 
+.image-overlay-content p {
+     color: #f5f5f4;
+}
+
+.day-hero-content p {
+    color: #d8b4fe;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+.image-overlay-content h1, 
+.image-overlay-content h3 {
+    text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+}
+
+
+/* 4. Stili per Componenti Specifici */
+.nav-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.nav-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.125rem;
+    color: #57534e;
+    max-width: 42rem;
+    margin: 0 auto 3rem auto;
+}
+
+
+/* 5. Stili per Bottoni */
+.nav-button {
+    display: inline-block;
+    padding: 0.5rem 0.75rem; 
+    font-size: 0.875rem; 
+    white-space: nowrap;
+    background-color: #7c3aed;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+    text-decoration: none;
+}
+.nav-button:hover {
+    background-color: #6d28d9;
+    color: white;
+}
+@media (min-width: 768px) {
+    .nav-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+.summary-button {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+    border: 2px solid #e9d5ff;
+    color: #581c87;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 600;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.summary-button:hover {
+    background-color: #faf5ff;
+    border-color: #c084fc;
+}
+
+.cta-button-sm {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #7c3aed;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+    text-decoration: none !important;
+}
+.nav-card:hover .cta-button-sm {
+    background-color: #6d28d9;
+}
+
+
+/* 6. Stili per Header di Navigazione */
+.main-header {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.main-header .nav-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #57534e;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.main-header .nav-link:hover {
+    color: #7c3aed;
+}
+
+.main-header .nav-link.active {
+    color: #7c3aed;
+}
+
+/* 7. Stili per il Carousel (Swiper.js) */
+.hub-carousel {
+    width: 100%;
+    height: 50vh;
+    max-height: 500px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.hub-carousel .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hub-carousel .swiper-button-next,
+.hub-carousel .swiper-button-prev {
+    color: #f5f5f4;
+    background-color: rgba(0,0,0,0.3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.hub-carousel .swiper-button-next:after,
+.hub-carousel .swiper-button-prev:after {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hub-carousel .swiper-pagination-bullet {
+    background-color: rgba(245, 245, 244, 0.7);
+    opacity: 1;
+}
+
+.hub-carousel .swiper-pagination-bullet-active {
+    background-color: #a855f7;
+}
+
+/* 8. Stili per le Sezioni Animate (day.php) */
+.day-section-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.day-section-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+    .day-section-card {
+        padding: 2rem;
+    }
+}
+
+.day-image-container {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    aspect-ratio: 4 / 3;
+}
+
+.day-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.day-image-container:hover img {
+    transform: scale(1.05);
+}
+
+.day-section-pretitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #9333ea;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+/* 9. Stili per il Modal di Navigazione */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 1rem;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    width: 100%;
+    max-width: 42rem;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.modal-close-button {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #a8a29e;
+    line-height: 1;
+}
+.modal-close-button:hover {
+    color: #1c1917;
+}
+
+.modal-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    color: #44403c;
+    text-decoration: none;
+}
+.modal-link:hover {
+    background-color: #f5f5f4;
+    color: #7c3aed;
+}
+
+.modal-link strong {
+    color: #1c1917;
+}
+
+/* 10. Stili per la Pagina dei Link */
+.link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.link-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e7e5e4;
+}
+.link-list li:last-child {
+    border-bottom: none;
+}
+.link-list a {
+    text-decoration: none;
+    font-weight: 600;
+}
+.link-list strong {
+    color: #57534e;
+    margin-right: 0.5rem;
+}
+
+/* 11. Stili per i Pulsanti di Feedback */
+.feedback-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e7e5e4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.feedback-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    border: 1px solid #d6d3d1;
+    background-color: white;
+    color: #57534e;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.feedback-button:hover {
+    background-color: #f5f5f4;
+    border-color: #a8a29e;
+}
+
+.feedback-button.voted {
+    background-color: #8b5cf6;
+    color: white;
+    border-color: #8b5cf6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.feedback-button.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.feedback-button span {
+    margin-left: 0.375rem;
+}
+
+/* 12. Stili per le Notifiche di Aggiornamento */
+.nav-card.is-new {
+    border-color: #a855f7; /* Bordo viola per le novità */
+}
+
+.new-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #ef4444; /* Rosso acceso */
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    pointer-events: none; /* Non interferisce con il click sulla card */
+}
+
+/* 13. Stili per la Pagina di Rendiconto */
+.progress-bar-bg {
+    background-color: #e7e5e4; /* stone-200 */
+    border-radius: 9999px;
+    overflow: hidden;
+    height: 0.75rem;
+}
+.progress-bar-fill {
+    height: 100%;
+    background-color: #10b981; /* green-500 */
+    border-radius: 9999px;
+    transition: width 0.5s ease-in-out;
+}
+.accordion-header { 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0.75rem 0; 
+    cursor: pointer; 
+    font-size: 1rem;
+    font-weight: 600;
+    color: #57534e;
+}
+.accordion-header:hover {
+    color: #1c1917;
+}
+.accordion-content { 
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.3s ease-out; 
+}
+.accordion-content.open { 
+    max-height: 1000px; /* Valore abbastanza grande per contenere il testo */ 
+}
+/* 14. Stili per la Timeline Verticale Immersiva (REDESIGN "A FIUME") */
+#timeline-background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+.timeline-background-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+.timeline-background-image.active {
+    opacity: 0.1;
+}
+
+.timeline-wrapper-v7 {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+}
+
+@media (min-width: 1024px) {
+    .timeline-wrapper-v7 {
+        /* MODIFICA: Allargata la colonna per evitare che le date vadano a capo */
+        grid-template-columns: 200px 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Navigazione laterale */
+.timeline-nav-v7 {
+    display: none;
+}
+@media (min-width: 1024px) {
+    .timeline-nav-v7 {
+        display: block;
+        position: sticky;
+        top: 100px;
+        height: calc(100vh - 120px);
+    }
+    /* MODIFICA: Stile "testo semplice" per i link */
+    .timeline-nav-v7 a {
+        display: block;
+        padding: 0 rem 0; /* Padding verticale minimo per spaziatura */
+        margin-bottom: 0 rem;
+        text-decoration: none;
+        color: #a8a29e; /* Colore base (stone-400) */
+        opacity: 0.6; /* I giorni non attivi sono semi-trasparenti */
+        font-weight: 600;
+        transition: all 0.3s ease-out;
+        border-radius: 0; /* Rimosso l'arrotondamento */
+    }
+    .timeline-nav-v7 a .day-title { 
+        font-size: 0.8rem;
+    }
+    /* MODIFICA: Al passaggio del mouse, il testo diventa opaco, senza sfondo */
+    .timeline-nav-v7 a:hover { 
+        background-color: transparent;
+        color: #f5f5f4; /* Bianco */
+        opacity: 1;
+    }
+    /* MODIFICA: Stile per il giorno attivo (colore, opacità, grassetto e dimensione) */
+    .timeline-nav-v7 a.active { 
+        background-color: transparent;
+        color: #f5f5f4; /* Bianco brillante */
+        opacity: 1;
+        font-weight: 700; /* Grassetto */
+        transform: scale(1.08); /* Leggermente ingrandito */
+    }
+}
+
+/* Contenuto principale e linea centrale */
+.timeline-content-v7 {
+    position: relative;
+    padding: 0 1rem;
+}
+.timeline-content-v7::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-image: linear-gradient(to bottom, transparent, #4c1d95 60rem, #7c3aed, #a78bfa);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    border-radius: 3px;
+}
+
+/* Header delle Parti (es. West Coast) */
+.timeline-part-header {
+    text-align: center;
+    padding: 2rem 0;
+    position: sticky;
+    top: 80px;
+    z-index: 10;
+    pointer-events: none;
+    background: transparent;
+}
+.timeline-part-header h2 {
+    visibility: hidden;
+}
+
+
+/* Marcatore del Giorno */
+.day-marker-v7 {
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+}
+.day-marker-content {
+    display: inline-block;
+    background-color: #1c1917;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+    display: none;
+}
+.day-marker-v7 .day-num {
+    color: #a855f7;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+.day-marker-v7 .day-title {
+    color: #f5f5f4;
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+.day-marker-v7 .day-date {
+    color: #a8a29e;
+}
+
+.day-callout-v7 {
+    position: relative;
+    display: inline-flex;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 3rem;
+    padding: 0.6rem 1.25rem;
+    background-color: rgba(41, 37, 36, 0.7);
+    border: 1px solid rgba(168, 162, 158, 0.2);
+    border-radius: 9999px;
+    backdrop-filter: blur(8px);
+    gap: 0.75rem;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+/* Contenitore per ogni evento */
+.timeline-event-v7 {
+    position: relative;
+    margin: 3rem 0;
+    /* Animazione */
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.timeline-event-v7.is-visible {
+    opacity: 1;
+    transform: translateX(0) !important;
+}
+
+.event-dot-v7 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #f5f5f4;
+    border: 3px solid #7c3aed;
+    z-index: 2;
+}
+.event-content-v7 {
+    position: relative;
+    width: calc(50% - 2.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.event-content-v7::before { /* Connettore orizzontale */
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2px;
+    background-color: #a8a29e;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Posizionamento Destra/Sinistra */
+.event-left { display: flex; justify-content: flex-start; }
+.event-right { display: flex; justify-content: flex-end; }
+.event-left .event-content-v7 { transform: translateX(-30px); }
+.event-right .event-content-v7 { transform: translateX(30px); }
+.event-left .event-content-v7::before { right: -2rem; }
+.event-right .event-content-v7::before { left: -2rem; }
+.is-visible .event-content-v7 { transform: translateX(0); }
+
+/* Stile del contenuto dell'evento */
+.event-image-v7 {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    transition: transform 0.3s ease;
+}
+.event-image-v7:hover {
+    transform: scale(1.05);
+}
+.event-image-v7 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* La magia per la forma organica */
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.event-text-v7 {
+    background-color: rgba(41, 37, 36, 0.7); /* stone-800 con trasparenza */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(168, 162, 158, 0.2);
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+.day-section-pretitle {
+    color: #c084fc; /* purple-400 */
+}
+
+/* Adattamento Mobile */
+@media (max-width: 767px) {
+    .timeline-wrapper-v7 { grid-template-columns: 1fr; }
+    .timeline-nav-v7 { display: none; }
+    .timeline-content-v7 { padding: 0; }
+    .timeline-content-v7::before { left: 1rem; transform: none; }
+    .event-dot-v7 { left: 1rem; }
+    .event-content-v7 { width: calc(100% - 3rem); }
+    .event-left, .event-right { justify-content: flex-end; }
+    .event-left .event-content-v7, .event-right .event-content-v7 {
+        transform: translateX(30px);
+    }
+    .event-content-v7::before { left: -2rem; }
+    
+    .day-callout-v7 {
+        /* Si adatta al flusso del contenuto, allineandosi a destra come gli altri elementi */
+        left: auto;
+        transform: none;
+        margin-left: 3rem;
+        margin-right: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+}
